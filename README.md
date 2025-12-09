@@ -6,6 +6,8 @@ This repository contains all documentation, slides, configs, and other materials
 
 The goal of this series is to help students build practical, hands-on skill in homelabbing using tools that can be replicated on personal hardware or DePaul SecLabs infrastructure.
 
+If you attend via Zoom, then we will not be able to assist you in troubleshooting technical problems. We will try our best to help you if you attend the sessions in person.
+
 ---
 
 
