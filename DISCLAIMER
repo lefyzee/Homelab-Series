@@ -1,0 +1,70 @@
+# Legal & Ethical Disclaimer
+
+This repository and all associated workshops are provided for **educational purposes only** by the Security Daemons organization at DePaul University.
+
+By using any material in this repository, you agree to the following:
+
+---
+
+## 1. Authorized Use Only
+
+You may only perform security testing, scanning, monitoring, or experimentation:
+
+- on systems **you personally own**,  
+- systems explicitly assigned to you (e.g., DePaul SecLabs VMs), or  
+- systems where you have **written permission** from the owner.
+
+Using these labs, scripts, or documentation against unauthorized systems is strictly prohibited and may violate:
+
+- DePaul University policies  
+- State and federal law  
+- The Computer Fraud and Abuse Act (CFAA)  
+
+---
+
+## 2. No Liability
+
+The Security Daemons, its members, advisors, or DePaul University:
+
+- **do not guarantee accuracy** of all materials  
+- **are not responsible for damage** to your systems  
+- **are not liable** for misuse of these tools or techniques  
+
+You assume all risk when using these labs on your own equipment.
+
+---
+
+## 3. Network Safety
+
+Some labs simulate real-world network services.  
+Do **not** expose insecure services (e.g., open Minecraft server, unauthenticated web services, open Pi-hole, etc.) directly to the internet.
+
+---
+
+## 4. Tool Usage
+
+The following tools may appear in labs (examples):
+
+- Nmap  
+- Wazuh  
+- Grafana  
+- Pi-hole  
+- Tailscale  
+- VMware  
+- TrueNAS  
+
+These tools must be used:
+
+- ethically  
+- legally  
+- and within policy boundaries  
+
+---
+
+## 5. External Resources
+
+Some labs reference external guides or software. Use these resources according to their respective licenses and terms.
+
+---
+
+If you do not agree with these terms, **do not use this repository**.
