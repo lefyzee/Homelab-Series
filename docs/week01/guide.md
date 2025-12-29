@@ -3,13 +3,13 @@ Students will install VMware Workstation Pro, create their first Linux VM, confi
 
 # Environment
     VMware Workstation Pro (Windows/Linux) 
-        We do not have support for M chip based Apple Macs at the momment
+        We do not have support for M chip based Apple Macs at the moment
 
     DePaul SecLabs Virtual Desktop
-        These virtual desktops act as a basic Debain Desktop environment. All of the labs can be performed from the virtual labs.
+        These virtual desktops act as a basic Debian Desktop environment. All of the labs can be performed from the virtual labs.
 
 # Target Audience
-    Beginner-friendly, step-by-step, assumes no prior knowlege of virtualization or Linux.
+    Beginner-friendly, step-by-step, assumes no prior knowledge of virtualization or Linux.
 
 # Learning Objectives
 - Install and configure virtualization software
@@ -31,7 +31,7 @@ Students will install VMware Workstation Pro, create their first Linux VM, confi
 
 
 ## Part 1 - What is Virtualization?
-Virtualization allows one phtsical computer to run multiple isolated operating systems at the same time. Each virtual machine (VM) behaves like a real computer with its own CPU, memory, disk, and network interface.
+Virtualization allows one physical computer to run multiple isolated operating systems at the same time. Each virtual machine (VM) behaves like a real computer with its own CPU, memory, disk, and network interface.
 
 Key Benefits:
 - Safe testing environment
@@ -51,7 +51,7 @@ Key Benefits:
 
 
 ## Part 3 - Downloading Debian 13.2
-1. Download the Debain 13.2 ISO file at https://www.debian.org
+1. Download the Debian 13.2 ISO file at https://www.debian.org
 2. Save the ISO somewhere easy to find
 
 
@@ -71,7 +71,7 @@ When Prompted, configure the VM resources:
 - **Disk:** 20–40 GB (single file recommended)
 - **Networking:** NAT (default)
 
-**Note:** These settings can be changed later and these are just reccomended settings.
+**Note:** These settings can be changed later and these are just recommended settings.
 
 
 ## Part 6 - Installing Debian (Headless)
@@ -150,4 +150,4 @@ We need this in case we make any mistakes and need to rollback to previous snaps
 
 If all boxes are checked, you have successfully completed Lab 1.
 
-We will use this for DNS and Pi-hole and all the other labs in the future.
+**We will use this VM for DNS and Pi-hole and all the other labs in the future.**
