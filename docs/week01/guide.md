@@ -124,6 +124,11 @@ Always update after installation:
 sudo apt update
 sudo apt upgrade -y
 
+**If "sudo" is not installed then login to your root account and type "apt install sudo"**
+**While logged into root type in "adduser <username> sudo**
+**Log out of root account and regular user account then login again**
+**Sudo should now work!**
+
 
 ## Part 10 - Snapshot & Backups
 Creating a Snapshot
