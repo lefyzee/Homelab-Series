@@ -1,4 +1,4 @@
-## Introduction to Virtualization and VM Setup (Lab 1)##
+# Introduction to Virtualization and VM Setup (Lab 1)
 Students will install VMware Workstation Pro, create their first Linux VM, configure resources, and learn core virtualization concepts.
 
 # Environment
