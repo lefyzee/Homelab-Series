@@ -22,3 +22,38 @@ Students will build a strong foundation in Debian Linux by learning core system 
 - Remotely access a Linux system using SSH
 
 ---
+
+
+## Required Software
+- **Debian 13.2 Virtual Machine**
+- **VMware Workstation Pro** or **DePaul SecLabs VM**
+- Internet connectivity inside the VM
+
+**-------------------------------------------**
+
+
+## Part 1 - Understanding Debian Linux
+Debian is a **stable, security-focused Linux distribution** widely used in servers, enterprise environments, and cybersecurity labs.
+
+Key Points:
+- Debian prioritizes stability over cutting-edge features
+- Security patches are backported without breaking the system
+- Many popular distributions (such as Ubuntu) are based on Debian
+
+Debian provides a predictable and professional foundation for all future labs.
+
+
+--
+
+
+## Part 2 - Terminal
+Like in the previous lab, we ran some commands. Some of these were:
+    ```bash
+    **whoami**
+    **hostname**
+    **pwd**
+
+These commands tell you:
+    Which user you are logged in as
+    The system hostname
+    Your current working directory

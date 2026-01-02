@@ -9,7 +9,7 @@ Students will install VMware Workstation Pro, create their first Linux VM, confi
         These virtual desktops act as a basic Debian Desktop environment. All of the labs can be performed from the virtual labs.
 
 # Target Audience
-    Beginner-friendly, step-by-step, assumes no prior knowledge of virtualization or Linux.
+Beginner-friendly, step-by-step, assumes no prior knowledge of virtualization or Linux.
 
 # Learning Objectives
 - Install and configure virtualization software
@@ -124,10 +124,10 @@ Always update after installation:
 sudo apt update
 sudo apt upgrade -y
 
-**If "sudo" is not installed then login to your root account and type "apt install sudo"**
-**While logged into root type in "adduser <username> sudo**
-**Log out of root account and regular user account then login again**
-**Sudo should now work!**
+***If "sudo" is not installed then login to your root account and type "apt install sudo"**
+***While logged into root type in "adduser 'username' sudo"**
+***Log out of root account and regular user account then login again**
+***Sudo should now work!**
 
 
 ## Part 10 - Snapshot & Backups
