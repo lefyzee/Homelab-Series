@@ -48,10 +48,9 @@ Debian provides a predictable and professional foundation for all future labs.
 
 ## Part 2 - Terminal
 Like in the previous lab, we ran some commands. Some of these were:
-    ```bash
-    **whoami**
-    **hostname**
-    **pwd**
+   * `whoami`
+   * `hostname`
+   * `pwd`
 
 These commands tell you:
    * Which user you are logged in as
@@ -65,9 +64,9 @@ Basic navigation commands:
    * clear (clear the screen)
 
 Command Structure:
-    **command [options] [arguments]
+   * command [options] [arguments]
 
 Example:
-    `ls -l /etc`
+   * `ls -l /etc`
 
-*This command will show the user all the contents of the /etc file*
++ *This command will show the user all the contents of the /etc file*
