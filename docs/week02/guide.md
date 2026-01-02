@@ -54,6 +54,20 @@ Like in the previous lab, we ran some commands. Some of these were:
     **pwd**
 
 These commands tell you:
-    Which user you are logged in as
-    The system hostname
-    Your current working directory
+   * Which user you are logged in as
+   * The system hostname
+   * Your current working directory
+
+Basic navigation commands:
+   * ls (list)
+   * cd / (change directory to root directory)
+   * cd ~ (change directory to home directory)
+   * clear (clear the screen)
+
+Command Structure:
+    **command [options] [arguments]
+
+Example:
+    `ls -l /etc`
+
+*This command will show the user all the contents of the /etc file*
