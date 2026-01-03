@@ -145,14 +145,14 @@ We need this in case we make any mistakes and need to rollback to previous snaps
 
 ### Lab 1 Completion Checklist
 
-✔ VMware Workstation Pro installed
-✔ Debian 13.2 VM created
-✔ Resources configured correctly
-✔ Debian installed without GUI
-✔ Able to log in via terminal
-✔ Ran basic Linux commands
-✔ System updated
-✔ Snapshot created
+* ✔ VMware Workstation Pro installed
+* ✔ Debian 13.2 VM created
+* ✔ Resources configured correctly
+* ✔ Debian installed without GUI
+* ✔ Able to log in via terminal
+* ✔ Ran basic Linux commands
+* ✔ System updated
+* ✔ Snapshot created
 
 If all boxes are checked, you have successfully completed Lab 1.
 
