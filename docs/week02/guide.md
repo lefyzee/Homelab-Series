@@ -70,3 +70,15 @@ Example:
    * `ls -l /etc`
 
 + *This command will show the user all the contents of the /etc file*
+
+
+--
+
+
+## Part 3 - Users, Groups, and Privileges
+Linux is a multi-user operating system. Even on a single VM, this security model is important. This is a cybersecurity club after all.
+
+### Root vs Normal Users:
+   * root has unrestricted access to the system
+   * Normal users have limited permissions
+   * sudo allows temporary privilege escalation
