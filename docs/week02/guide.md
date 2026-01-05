@@ -82,3 +82,83 @@ Linux is a multi-user operating system. Even on a single VM, this security model
    * root has unrestricted access to the system
    * Normal users have limited permissions
    * sudo allows temporary privilege escalation
+
+Now lets check your group membership:
+`groups`
+
+Check user identity information:
+`id`
+
+System user data is stored in:
+   * /etc/passwd
+   * /etc/shadow (restricted if not root user)
+
+Pro tip: **You should never use the root account for daily tasks.**
+
+
+--
+
+
+## Part 4 - Package Management and System Updates
+Keeping your system updated is one of the most important security practices.
+
+update package list:
+`sudo apt update`
+
+Upgrade installed packages:
+`sudo apt upgrade`
+
+Install a few useful tools:
+`sudo apt install -y curl htop`
+Now lets test it:
+`htop`
+
+Htop allows the user to check resources and proccesses on the Debian server.
+You can also check for PIDs here and kill proccesses if you need to.
+
+
+--
+
+
+## Part 5 - Networking Basics
+Now lets get into some of the networing of Debian
+
+Check your IP address:
+`ip a`
+
+Check your default route:
+`ip route`
+
+Test internet connectivity:
+`ping -c 3 8.8.8.8`
+`ping -c 3 google.com`
+
+If both of these tests succeed, your system is ready for remote access.
+
+
+--
+
+
+## Part 6 - Understanding Services and systemd
+A service (daemon) is a background process that runs continously to provide functionality such as SSH or web hosting.
+
+Debian uses systemd to manage services.
+
+Common Commands:
+`systemctl status`
+`systemctl start`
+`systemctl stop`
+`systemctl enable`
+service config files are typically stored in `/etc`.
+
+To check what Daemons are running in the background (we won't be able to see them in htop) we need to run a specific command:
+`sudo systemctl list-units --type=service --state=running`
+
+--
+
+
+## Part 7 - Installing OpenSSH
+SSH allows secure remote access to your Linux system.
+
+Install the OpenSSH server (if you did not install it during the initial install):
+`sudo apt install openssh-server`
