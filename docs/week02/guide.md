@@ -42,9 +42,7 @@ Key Points:
 
 Debian provides a predictable and professional foundation for all future labs.
 
-
 --
-
 
 ## Part 2 - Terminal
 Like in the previous lab, we ran some commands. Some of these were:
@@ -71,9 +69,7 @@ Example:
 
 + *This command will show the user all the contents of the /etc file*
 
-
 --
-
 
 ## Part 3 - Users, Groups, and Privileges
 Linux is a multi-user operating system. Even on a single VM, this security model is important. This is a cybersecurity club after all.
@@ -95,9 +91,7 @@ System user data is stored in:
 
 Pro tip: **You should never use the root account for daily tasks.**
 
-
 --
-
 
 ## Part 4 - Package Management and System Updates
 Keeping your system updated is one of the most important security practices.
@@ -116,9 +110,7 @@ Now lets test it:
 Htop allows the user to check resources and proccesses on the Debian server.
 You can also check for PIDs here and kill proccesses if you need to.
 
-
 --
-
 
 ## Part 5 - Networking Basics
 Now lets get into some of the networing of Debian
@@ -135,9 +127,7 @@ Test internet connectivity:
 
 If both of these tests succeed, your system is ready for remote access.
 
-
 --
-
 
 ## Part 6 - Understanding Services and systemd
 A service (daemon) is a background process that runs continously to provide functionality such as SSH or web hosting.
@@ -156,9 +146,19 @@ To check what Daemons are running in the background (we won't be able to see the
 
 --
 
-
 ## Part 7 - Installing OpenSSH
 SSH allows secure remote access to your Linux system.
 
 Install the OpenSSH server (if you did not install it during the initial install):
 `sudo apt install openssh-server`
+
+Check if SSH is running:
+`systemctl status ssh`
+
+Lets check what port SSH is running on:
+`ss -tulpn | grep ssh`
+
+--
+
+## Part 8 - Connecting to the VM
+We will need another VM for this. This can be created with a Debian Desktop environment usigng the same installed to create another VM with a desktop.
