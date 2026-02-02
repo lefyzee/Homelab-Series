@@ -291,5 +291,3 @@ You do not need to complete every part to move on, but try as much as you can.
 ✔ Understand which services are listening on the system  
 
 If all boxes are checked, you have successfully completed Lab 2.
-
-**This system is now ready for service hardening and hosting in Lab 3.**
