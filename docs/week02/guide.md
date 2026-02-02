@@ -161,4 +161,135 @@ Lets check what port SSH is running on:
 --
 
 ## Part 8 - Connecting to the VM
-We will need another VM for this. This can be created with a Debian Desktop environment usigng the same installed to create another VM with a desktop.
+We will need another VM for this. This can be created with a Debian Desktop environment using the same debian ISO to create another VM with a desktop. If you are in the NetLabs then log into the other Linux Machine.
+
+Options:
+- A second Debian VM with a desktop environment
+- Another Linux machine in NetLabs
+- Your host system (if it supports SSH)
+
+First, find the IP address of your Debian server:
+
+`ip a`
+
+Take note of the IP address assigned to your network interface.
+
+From the second machine, connect using SSH:
+
+`ssh username@IP_ADDRESS`
+
+Example:
+`ssh student@192.168.233.128`
+
+The first time you connect, you may see a host key warning. This is normal and is used to prevent man-in-the-middle attacks.
+
+Enter your password when prompted.
+
+If successful, you are now logged into your Debian VM **remotely**.
+
+--
+
+## Part 9 - Confirming a Remote SSH Session
+Now that you are logged in via SSH, let’s confirm that this is truly a remote session.
+
+Run:
+`who`
+
+This shows all users currently logged into the system.
+
+Next, run:
+`w`
+
+This command shows:
+- Who is logged in
+- Where they are logged in from (IP address)
+- How long they have been connected
+
+This is how system administrators track active sessions on a server.
+
+--
+
+## Part 10 - Hostname and Server Identity
+Servers are identified by hostnames, not just IP addresses.
+
+Check the current hostname:
+`hostname`
+
+View detailed system identity information:
+`hostnamectl`
+
+(Optional – Advanced / Instructor Approved)
+You may set a clearer hostname for this lab:
+
+`sudo hostnamectl set-hostname debian-lab2`
+
+Log out and log back in via SSH to see the updated hostname in your terminal prompt.
+
+--
+
+## Part 11 - Viewing SSH Logs (Security Awareness)
+Every SSH login attempt is logged by the system.
+
+View recent SSH log entries:
+`sudo journalctl -u ssh -n 20`
+
+You should see entries showing:
+- Successful logins
+- The username used
+- The source IP address
+
+This is one of the primary places administrators look when investigating unauthorized access.
+
+--
+
+## Part 12 - Network Visibility: What Services Are Listening?
+Servers expose services through network ports. Knowing what is listening is critical for security.
+
+List listening TCP and UDP ports:
+`ss -tuln`
+
+Now filter for SSH specifically:
+`ss -tuln | grep ssh`
+
+You should see SSH listening on port **22**.
+
+This command helps administrators understand a system’s attack surface.
+
+--
+
+## Part 13 - Mini Challenge (Optional but Recommended)
+This challenge is designed for students who want to go a bit deeper.
+
+Your goal:
+- Confirm you are logged in via SSH
+- Identify the IP address you connected from
+- Find your most recent SSH login time
+- Confirm SSH is the only remote-access service listening
+
+Helpful commands:
+`who`
+`w`
+`last`
+`journalctl -u ssh`
+`ss -tuln`
+
+You do not need to complete every part to move on, but try as much as you can.
+
+--
+
+### Lab 2 Completion Checklist
+
+✔ Debian 13.2 VM running correctly  
+✔ Comfortable navigating the Linux terminal  
+✔ Understand users, groups, and sudo  
+✔ System fully updated  
+✔ Able to install packages using `apt`  
+✔ Understand what a service (daemon) is  
+✔ OpenSSH installed and running  
+✔ Successfully connected to the VM via SSH  
+✔ Able to view SSH logs  
+✔ Understand which services are listening on the system  
+
+If all boxes are checked, you have successfully completed Lab 2.
+
+**This system is now ready for service hardening and hosting in Lab 3.**
