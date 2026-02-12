@@ -41,15 +41,35 @@ Beginner friendly but introduces real service hosting concepts. Assumes students
 + Minecraft Java Edition (client on host machine)
 
 
-
-
 ## Part 1 - Preparing the Debian Server
-Add whatever you need here. Look at week 1 docs\week02\guide.md for specific examples of what to put here
+It has been a week since we last updated the server so lets go ahead and update it
+`sudo apt update && sudo apt upgrade -y`
 
-## Part 2 - Next step for the process
-Add as many steps as you need. Just keep them consistent with the previous formating
+Install Required Java Runtime:
+For newer versions of Minecraft we need Java 17 or newer
+`sudo apt install openjdk-17-jre -y`
 
-## Part 3 -
+Now make sure that it is installed:
+`java -version`
+You should see OpenJDK 17 listed.
+
+## Part 2 - Creating the Minecraft Server Directory
+Create a dedicated directory:
+`mkdir ~/minecraft-server`
+`cd ~/minecraft-server`
+
+Download the latest Minecraft server .jar file from:
+
+*https://www.minecraft.net/en-us/download/server*
+
+Use wget to download it directly (replace the URL with the current version):
+`wget https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar`
+
+## Part 3 - First Launch and EULA Acceptance
+Run the server for the first time:
+`java -Xmx4G -Xms4G -jar minecraft_server.1.21.11.jar nogui`
+
+
 ## Part 4 -
 ## Part 5 -
 
