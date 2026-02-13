@@ -101,15 +101,64 @@ Edit the configuration
 `nano server.properties`
 
     Key setting to modify
-    `motd=Security Daemons Lab Server`
-    `difficulty=normal`
-    `max-player=10`
-    `online-mode=false`
+        `motd=Security Daemons Lab Server`
+        `difficulty=normal`
+        `max-player=10`
+        `online-mode=false`
 
 For now, we set online-mode=false to simplify local testing
 Save and restart the server
 
-## Part 5 - Firewall Configuration
+## Part 5 - Firewall Configuration (UWF Configuration)
+Check firewall status
+`sudo ufw status`
+    If it is not installed or active follow these steps
+        `sudo apt install ufw`
+        `sudo ufw enable`
+
+If the firewall is active, allow Minecraft's default port:
+`sudo ufw allow 25565/tcp`
+
+Make sure the rule works
+`sudo ufw status`
+
+## Part 6 - Finding the IP addess of the VM
+We did this last week but just as a reminder run
+`ip a`
+
+You will find an IP address on interface ens33 like:
+*192.168.196.134*
+
+Remember this IP address as we will use it to connect to the server.
+
+## Part 7 - Connecting to the Server
+From your host machine:
+1. Open Minecraft Java Edition
+2. Click Multiplayer
+3. Add Server
+4. <VM_IP>:25565
+
+Note: *If you are not able to connect then switch from NAT mode to Bridged Mode in VMware*
+
+## Part 8 - Running the Server in the Background (Advanced)
+Instead of keeping the terminal always open, we can use *screen* to make the Minecraft server run in the background.
+
+Install screen
+`sudo apt install screen`
+
+Start a screen session:
+`screen -S mcserver`
+Now run the server inside it.
+
+Detach the server with:
+`Ctrl + A, then D`
+
+Reattach:
+`screen -r mcserver`
+
+Like this we are able to manage what is on our terminal so we can work on other projects.
+
+## Part 9 - Monitoring and Resource Usage
 
 ### Lab number Completion Checklist
 * What is the student expected to accomplish for this lab?
