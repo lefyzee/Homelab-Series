@@ -200,6 +200,8 @@ Add this in the contents:
    java -Xms$RAM_MIN -Xmx$RAM_MAX -jar $JAR_FILE nogui
 
 save and exit
+`Ctrl + O`
+`Ctrl + X`
 
 ### Make the Script Executable
 Right now we just created a text file. We need to make it executable.
