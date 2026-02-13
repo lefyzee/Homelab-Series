@@ -11,4 +11,4 @@ Have students experiment with:
 -XmX512M
 -Xmx4G
 
-Theh watch htop
+Then watch htop

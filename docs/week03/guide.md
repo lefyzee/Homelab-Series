@@ -185,9 +185,8 @@ Inside your **minecraft-server** directory:
 
 Add this in the contents:
    #!/bin.bash
-
-   # Minecraft Server Startup Script
-   # Adjust RAM allocation if needed
+   `# Minecraft Server Startup Script`
+   `# Adjust RAM allocation if needed`
 
    RAM_MIN="1G"
    RAM_MAX="2G"
