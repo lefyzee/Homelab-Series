@@ -1,16 +1,3 @@
-This is the general template for the labs
-
-Useful commands:
-- "-" "+" "*" creates bullet points
-- "`code`" creates code
-- "#" creates heading 1
-- "##" creates heading 2
-- "###" creates heading 3
-- "**text**" bold the text
-- "*text*" italicize the text
-
-
-
 # Hosting a Local Minecraft Server (Lab 3)
 This week we will deploy and manage a local Minecraft server on Debian. Students will learn how to install Java, configure a service, manage server processes, and host a multiplyer service inside a virtual machine.
 

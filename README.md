@@ -21,7 +21,7 @@ If you attend via Zoom, then we will not be able to assist you in troubleshootin
 4. Internal Website Hosting with Apache
 5. Tailscale and Pi-Hole Setup
 6. Catch-up & Open Lab Week
-7. Setting up a NAS (TrueNAS in VMware)
+7. Setting up a NAS and File Sharing with Samba
 8. SIEMS and Logging
 9. Monitoring and Dashboards
 10. Homelab Capstone Showcase
