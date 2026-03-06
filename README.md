@@ -48,3 +48,6 @@ Some labs may also use:
 - Debian, PI OS, Ubuntu Server IOSs
 - TrueNAS ISO
 - Basic familiarity with the command line
+
+pookie was here :)
+Luke Patton-Van Buskirk
