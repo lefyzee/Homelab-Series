@@ -91,8 +91,30 @@ Explanation:
 Save and exit the file.
 Ctrl + O then Ctrl + X
 
-## Part 4 -
-## Part 5 -
+Restart the Samba service:
+`sudo systemctl restart smbd`
+
+Verify systemctl status smbd:
+`sudo systemctl status smbd`
+
+## Part 4 - Accessing the Share from Windows
+Lets connect to the Samba share from a Windows machine.
+
+First determine the Debian server IP address:
+`ip a`
+
+Locate the IP address of your network interface.
+
+On a Windows machine (This can either be another VM or from your host computer) open File Explorer and enter the following in the address bar:
+`\\Server_IP\Shared`
+
+Example:
+`\\192.168.1.130\Shared`
+
+If configured correctly, the shared folder should now appear.
+Try creating a test file inside the share.
+
+## Part 5 - Testing File Sharing
 
 ### Lab number Completion Checklist
 * What is the student expected to accomplish for this lab?
