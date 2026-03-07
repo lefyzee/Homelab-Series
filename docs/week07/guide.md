@@ -130,6 +130,10 @@ You can also test creating a file from Debian:
 
 Refresh the Windows share to verify the file appears.
 
+## Part 6 - Creating a Samba User
+## Part 7 - Mapping a Network Drive
+## Part 8 - Automate Backups
+
 ### Lab number Completion Checklist
 * What is the student expected to accomplish for this lab?
 * (eg. created debian VM)

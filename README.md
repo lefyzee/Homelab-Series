@@ -18,13 +18,13 @@ If you attend via Zoom, then we will not be able to assist you in troubleshootin
 1. Homelab Inspiration and VMware Basics
 2. Building Your First Debian Server
 3. Hosting Your Own Minecraft Server
-4. Internal Website Hosting with Apache
-5. Tailscale and Pi-Hole Setup
-6. Catch-up & Open Lab Week
-7. Setting up a NAS and File Sharing with Samba
-8. SIEMS and Logging
-9. Monitoring and Dashboards
-10. Homelab Capstone Showcase
+4. Internal Website Hosting with Apache2
+5. Access your homelab from anywhere (Tailscale Setup) 
+7. DNS Sinkhole (Pi-Hole Setup)
+8. Set Up Your Own Cloud (Samba and NAS)
+9. SIEMS and Logging
+10. Monitoring and Dashboards
+11. Homelab Capstone Showcase
 
 
 Each week includes:
