@@ -26,7 +26,6 @@ If you attend via Zoom, then we will not be able to assist you in troubleshootin
 10. Monitoring and Dashboards
 11. Homelab Capstone Showcase
 
-
 Each week includes:
 
 - A lab guide ('docs/weekXX/guide.md')
