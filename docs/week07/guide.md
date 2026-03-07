@@ -11,25 +11,32 @@ Useful commands:
 
 
 
-# Name of the Lab for the Week (Lab number)
-Little text here briefly explaining what this subject is.
+# File Sharing with Samba (Lab 7)
+In this lab we will configure a basic **Network Attached Storage (NAS)** using **Samba**, allowing both Windows and Linux systems to share files over a network. Samba implements the SMB protocol, which is the same protocol used by Windows file sharing and many commercial NAS systems such as Synology.
+
+By the end of this lab students will build a simple file sharing server that can accessed by multiple machines on the network.
 
 # Environment
-    What environment we are using for the week. (eg. Debian 13.2, VMware, DePaul Sec Labs)
+Debian 13.2 Server VM
+VMware Workstation Pro
+Local virtual network created in previous labs
 
 # Target Audience
-Is this for a more beginner friendly audience or advanced audience?
+This labs is beginner friendly and is designed for students who are new to Linux systems administration and network services.
 
 # Learning Objectives
-- Dashes for each subject the student is expected to learn
-- Feel free to use multiple!
+- Understand what a NAS (Network Attached Storage) is
+- Install and configure Samba on Linux
+- Create and configure a shared network directory
+- Connect to a Linux file share on Windows
+- Understand basic Linux file permissions
+- Understand how file sharing works in mixed OS environments
 
 ## Required Software
-Will be **VMware Workstation Pro** for most cases
-Add more if using specific software
-
-
-
+* VMware Workstation Pro
+* Debian 13.2
+* Windows VM or Windows host machine
+* Terminal access to the Debian VM
 
 ## Part 1 - How are we starting this week
 Add whatever you need here. Look at week 1 docs\week02\guide.md for specific examples of what to put here
