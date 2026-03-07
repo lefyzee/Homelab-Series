@@ -115,6 +115,20 @@ If configured correctly, the shared folder should now appear.
 Try creating a test file inside the share.
 
 ## Part 5 - Testing File Sharing
+To verify the system works correctly:
+
+1. Create a file form the Windows machine.
+2. Verify the file appears on the Debian Server.
+
+On Debian we will check if the file was written:
+`ls /srv/shared`
+
+You should see the file created from Windows.
+
+You can also test creating a file from Debian:
+`touch /srv/shared/test_from_linux.txt`
+
+Refresh the Windows share to verify the file appears.
 
 ### Lab number Completion Checklist
 * What is the student expected to accomplish for this lab?
