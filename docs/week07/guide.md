@@ -53,10 +53,44 @@ Verify Samba installed correctly:
 
 *You should now have the Samba service installed on the system.*
 
-## Part 2 - Next step for the process
-Add as many steps as you need. Just keep them consistent with the previous formating
+## Part 2 - Creating a Shared Directory
+Next we will create the directory that will be shared across the network.
 
-## Part 3 -
+Create a directory for the shared storage:
+`sudo mkdir -p /srv/shared`
+
+Set basic permission for the foler:
+`sudo chmod 777 /srv/shared`
+
+*Note:*
+*These permissions are intentionally permissive for the purpose of this lab. In real environments, permission should be restricted.
+
+Lets double check to make sure the folder exists:
+`ls -ld /srv/shared`
+
+## Part 3 - Configure Samba
+Now we will configure Samba to share the directory across the network.
+
+Open the Samba configuration file:
+`sudo nano /etc/samba/smb.conf`
+
+Scroll or arrow down to the bottom of the file and add the following configs:
+
+    [Shared]
+    path = /srv/shared
+    browseable = yes
+    read only = no
+    guest ok = yes
+
+Explanation:
+* **path** - directory being shared
+* **browseable** - allows the share to be visable on the network
+* **read only** - allows writing to the share
+* **guest ok** - allow access without authentication (this is for lab simplicity but in a real environment there would be some sort of authentication)
+
+Save and exit the file.
+Ctrl + O then Ctrl + X
+
 ## Part 4 -
 ## Part 5 -
 
