@@ -38,8 +38,20 @@ This labs is beginner friendly and is designed for students who are new to Linux
 * Windows VM or Windows host machine
 * Terminal access to the Debian VM
 
-## Part 1 - How are we starting this week
-Add whatever you need here. Look at week 1 docs\week02\guide.md for specific examples of what to put here
+## Part 1 - Prep the Server
+Before configuring Samba, we must ensure the Debian system is updated and ready.
+
+Update the system:
+`sudo apt update`
+`sudo apt upgrade`
+
+Install Samba:
+`sudo apt install samba`
+
+Verify Samba installed correctly:
+`smbd --version`
+
+*You should now have the Samba service installed on the system.*
 
 ## Part 2 - Next step for the process
 Add as many steps as you need. Just keep them consistent with the previous formating
