@@ -11,7 +11,7 @@ Useful commands:
 
 
 
-# File Sharing with Samba (Lab 7)
+# File Sharing with Samba (Lab 8)
 In this lab we will configure a basic **Network Attached Storage (NAS)** using **Samba**, allowing both Windows and Linux systems to share files over a network. Samba implements the SMB protocol, which is the same protocol used by Windows file sharing and many commercial NAS systems such as Synology.
 
 By the end of this lab students will build a simple file sharing server that can accessed by multiple machines on the network.
@@ -31,6 +31,8 @@ This labs is beginner friendly and is designed for students who are new to Linux
 - Connect to a Linux file share on Windows
 - Understand basic Linux file permissions
 - Understand how file sharing works in mixed OS environments
+- Configure authenticated Samaba users
+- Map persistent network drives in Windows
 
 ## Required Software
 * VMware Workstation Pro
@@ -125,19 +127,63 @@ On Debian we will check if the file was written:
 
 You should see the file created from Windows.
 
-You can also test creating a file from Debian:
+You can also test creating a file from Debian (It may take a few minutes to propagate):
 `touch /srv/shared/test_from_linux.txt`
 
 Refresh the Windows share to verify the file appears.
 
 ## Part 6 - Creating a Samba User
+In real environments, file shares are typically protected with user authentication instead of guest access.
+
+First create a local user that will access the share.
+`sudo adduser sambauser`
+Follow the prompts to set a password.
+
+Add the User to Samba
+We need to add the user to the Samaba password database:
+`sudo smbpasswd -a sambauser`
+
+Enable the User:
+`sudo smbpasswd -e sambauser`
+
+Restart Samba:
+`sudo systemctl restart smbd`
+
+Connect Using Creds
+From Windows, open File Explorer and connect again:
+`\\SERVER_ip\Shared`
+
+Windows may prompt for credentials.
+
+Enter:
+Username:
+`sambauser`
+Password:
+`(password you created for this user earlier)`
+
 ## Part 7 - Mapping a Network Drive
+Mapping a network drive makes the share appear as a normal driver letter on the system.
+1. Open **File Explorer**
+2. Click **This PC**
+3. Select **Map network drive**
+
+Choose a drive letter (example: Z:)
+Folder path:
+`\\SERVER_IP\Shared`
+
+Enable:
+`Reconnect at sign-in`
+Click **Finish.**
+The share will now appear as a permanent drive on the Windows system as long as the server is operational.
+
 ## Part 8 - Automate Backups
 
 ### Lab number Completion Checklist
-* What is the student expected to accomplish for this lab?
-* (eg. created debian VM)
-* (eg. created NAS)
-
-
-**At the end feel free to add any extra notes for next week**
+* Installed Samba on the Debian Server
+* Created a shared directory (/srv/shared)
+* Configured a Samba share in smb.conf
+* Connected to the share from Windows
+* Successfully transfered files between systems
+* Created a Samba user
+* Connected using authenticated credentials
+* Mapped the share a Windows network drive
