@@ -44,14 +44,14 @@ This labs is beginner friendly and is designed for students who are new to Linux
 Before configuring Samba, we must ensure the Debian system is updated and ready.
 
 Update the system:
-    `sudo apt update`
-    `sudo apt upgrade`
+      `sudo apt update`
+     `sudo apt upgrade`
 
 Install Samba:
-    `sudo apt install samba`
+     `sudo apt install samba`
 
 Verify Samba installed correctly:
-    `smbd --version`
+      `smbd --version`
 
 *You should now have the Samba service installed on the system.*
 
