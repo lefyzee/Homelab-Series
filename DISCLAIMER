@@ -1,6 +1,6 @@
 # Legal & Ethical Disclaimer
 
-This repository and all associated workshops are provided for **educational purposes only** by the Security Daemons organization at DePaul University.
+This repository and all associated workshops are provided for **educational purposes only** by Brandon Dudas from the Security Daemons organization at DePaul University.
 
 By using any material in this repository, you agree to the following:
 
@@ -51,7 +51,6 @@ The following tools may appear in labs (examples):
 - Pi-hole  
 - Tailscale  
 - VMware  
-- TrueNAS  
 
 These tools must be used:
 
@@ -64,6 +63,12 @@ These tools must be used:
 ## 5. External Resources
 
 Some labs reference external guides or software. Use these resources according to their respective licenses and terms.
+
+These resources include but at not limited to:
+
+- Working with these services in classes or on personal projects
+- The Linux Bible Eleventh Edition
+- CCDC Practices / Competitions
 
 ---
 
