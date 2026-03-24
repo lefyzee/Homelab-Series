@@ -176,7 +176,33 @@ Enable:
 Click **Finish.**
 The share will now appear as a permanent drive on the Windows system as long as the server is operational.
 
-## Part 8 - Automate Backups
+## Part 8 - Securing the Share with Groups and Permissions
+In production environments, we do not use chmod 777 since it allows anyone access to it. Instead, access is controlled using groups and ownership.
+
+1. Create a Shared Group
+    Create a group that will control access to the shared directory:
+    `sudo groupadd sambashare`
+
+2. Add Users to the Group
+    Add your Samba user to the group:
+    `sudo usermod -aG sambashare sambauser`
+
+    Verify group membership:
+    `groups sambauser`
+
+3. Update Directory Ownership
+    Assign the shared folder to the group:
+    `sudo chown -R root:sambashare /srv/shared`
+
+4. Set Secure Permissions
+    Lets set the proper perms for only that group to be able to modify the share.
+    `sudo chmod -R 2770 /srv/shared`
+
+        Explanation:
+        - 2 -> SetGID bit (new files inherit group)
+
+## Part 9
+## Part 10 - Automate Backups
 
 ### Lab number Completion Checklist
 * Installed Samba on the Debian Server
