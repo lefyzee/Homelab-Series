@@ -1,16 +1,3 @@
-This is the general template for the labs
-
-Useful commands:
-- "-" "+" "*" creates bullet points
-- "`code`" creates code
-- "#" creates heading 1
-- "##" creates heading 2
-- "###" creates heading 3
-- "**text**" bold the text
-- "*text*" italicize the text
-
-
-
 # File Sharing with Samba (Lab 8)
 In this lab we will configure a basic **Network Attached Storage (NAS)** using **Samba**, allowing both Windows and Linux systems to share files over a network. Samba implements the SMB protocol, which is the same protocol used by Windows file sharing and many commercial NAS systems such as Synology.
 
@@ -44,14 +31,14 @@ This labs is beginner friendly and is designed for students who are new to Linux
 Before configuring Samba, we must ensure the Debian system is updated and ready.
 
 Update the system:
-      `sudo apt update`
-     `sudo apt upgrade`
+`sudo apt update`
+`sudo apt upgrade`
 
 Install Samba:
-     `sudo apt install samba`
+`sudo apt install samba`
 
 Verify Samba installed correctly:
-      `smbd --version`
+`smbd --version`
 
 *You should now have the Samba service installed on the system.*
 
@@ -209,9 +196,73 @@ Lets set the proper perms for only that group to be able to modify the share.
         All new files stay within the same group
 
 Update Samba Configuration
+Edit the Samab Config Again
+`sudo nano /etc/samba/smb.conf`
 
-## Part 9
-## Part 10 - Automate Backups
+Update your share:
+
+    [Shared]
+    path = /srv/shared
+    browseable = yes
+    read only = no
+    valid users = @sambashare
+    create mask = 0660
+    directory mask = 2770
+
+Explanation:
+
+    valid users -> restricts access to group members
+    create mask -> file perms
+    directory mask -> directory perms
+
+Restart Samba
+`sudo systemctl restart smbd`
+
+Test Access Again
+Reconnect from Windows using:
+`\\SERVER_IP\Shared`
+*Only users in the sambashare group should now have access.*
+
+## Part 9 - Script to Automate Backups of the Shared Directory
+A NAS is only useful if the data is protected. In this section, we will create a **simple automated backup system.**
+
+Create a Backup Directory
+`sudo mkdir -p /srv/backups`
+
+Create a Backup Script
+Create a backup script: `nano backup.sh`
+
+        #!/bin/bash
+
+        TIMESTAMP=$(date +%F_%H-%M)
+        BACKUP_DIR="/srv/backups"
+        SOURCE_DIR="/srv/shared"
+
+        tar -czf $BACKUP_DIR/shared_backup_$TIMESTAMP.tar.gz $SOURCE_DIR
+
+Save and exit using:
+`Ctrl + O` and `Ctrl + X`
+
+Make the Script Executable
+`chmod +x backup.sh`
+
+Test the Backup Script
+Run:
+`./backup.sh`
+
+Verify backup files:
+`ls /srv/backups`
+
+## Part 10 - Automate with Cron (optional)
+Edit cron jobs:
+`crontab -e`
+
+Add this line to run the backup daily at midnight:
+`0 0 * * * /home/youruser/backup.sh`
+*Make sure to update the script path if needed to the actual backup.sh file path. the youruser part will be the user you logged into the machine on or where the script is located*
+
+Verify Cron Job
+`crontab -l`
 
 ### Lab number Completion Checklist
 * Installed Samba on the Debian Server
@@ -222,3 +273,5 @@ Update Samba Configuration
 * Created a Samba user
 * Connected using authenticated credentials
 * Mapped the share a Windows network drive
+* Created a script to automate backups from the share
+* Created a cron job to do daily backups at midnight of the share
