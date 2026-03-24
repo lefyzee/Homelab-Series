@@ -44,14 +44,14 @@ This labs is beginner friendly and is designed for students who are new to Linux
 Before configuring Samba, we must ensure the Debian system is updated and ready.
 
 Update the system:
-`sudo apt update`
-`sudo apt upgrade`
+    `sudo apt update`
+    `sudo apt upgrade`
 
 Install Samba:
-`sudo apt install samba`
+    `sudo apt install samba`
 
 Verify Samba installed correctly:
-`smbd --version`
+    `smbd --version`
 
 *You should now have the Samba service installed on the system.*
 
@@ -61,7 +61,7 @@ Next we will create the directory that will be shared across the network.
 Create a directory for the shared storage:
 `sudo mkdir -p /srv/shared`
 
-Set basic permission for the foler:
+Set basic permission for the folder:
 `sudo chmod 777 /srv/shared`
 
 *Note:*
