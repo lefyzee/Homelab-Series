@@ -167,7 +167,7 @@ Basic idea:
 This is much safer than port forwarding.
 
 Students should research:\
-www.cloudflare.com\
+www.cloudflare.com \
 On how to set up a reverse proxy
 
 More specifically:
