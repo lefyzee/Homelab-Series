@@ -101,8 +101,76 @@ Create your own:\
 
 This lab will not go into HTML, CSS, or JavaScript in detail because this is cybersecurity club, not a UI/UX design club. All the web pages we will create are basic HTML web pages. If you want to learn more about front-end web design please visit **www.theodinproject.com**
 
-## Part 4 -
-## Part 5 -
+Example HTML:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Homelab Website</title>
+</head>
+<body>
+    <h1>Hello Security Daemons!</h1>
+    <p>This is my first Apache2 web server.</p>
+</body>
+</html>
+
+Save the file using:\
+`Ctrl + O` `Ctrl + X`
+
+And then refresh the browser.
+
+You should now see your own webpage hosted on your web server!
+
+## Part 4 - Security Warning: Do NOT Publicly Expose This Yet
+This is the most important part of the lab.
+
+Many new people making a web server think that they can just port forward my router and host my website publicly. This is a bad idea.
+
+Risk includes:
+- exposing your home IP address
+- automated bot scanning
+- vulnerability exploitation
+- brute force attempts
+- data leaks
+- router misconfigurations
+- exposing your entire home network
+
+Strong recommendation: **DO NOT** directly expose your home web server to the internet.
+
+You can only do it safely after:
+- proper firewall rules have been implemented
+- an IDS/IPS system
+- patch management
+- reverse proxy protection
+- logging and monitoring
+
+This is how people accidentally get compromised.
+
+Seriously - do not do this casually.
+
+## Part 5 - Safer Alternatives
+### Option A - Use Cloudflare Proxy (Recommended)
+### Option B - Host in the Cloud
+## Part 6 - Basic Apache Administration
+## Part 7 - Optional Challenge - Deploy a Real Web Application
+Optional only.
+
+Students who finish early can research:
+- OpenCart (This is used for CCDC practice! I would recommend setting this up if you are interested in trying out for the CCDC team!)
+- WordPress (There is a cloud hosted version and a locally hosted version. This is a great place to learn more about building websites on the front end and the backend if you host locally)
+- Drupal
+- Docker-based web applications (Very practical for homelabing)
+
+**This introduces:**
+- PHP
+- MySQL/MariaDB
+- application security
+- web app permissions
+- backups
+- patching
+
+This is much closer to what you will see in the real world. Most site are not just Apache2 basic html websites but there is a whole rabbit hole you can go down in web that could be its own series on its own! If you are interested on web dev please do research outside of this GitHub repo as we barely scratched the surface of web.
+
+
 
 ### Lab number Completion Checklist
 * What is the student expected to accomplish for this lab?
