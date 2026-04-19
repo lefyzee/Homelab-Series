@@ -9,7 +9,7 @@ Useful commands:
 - "**text**" bold the text
 - "*text*" italicize the text
 
-
+**THIS LAB HAS NOT BEEN TESTED YET**
 
 # Self-Hosted Web Server Basics with Apache2 (Lab 4)
 This lab introduces studebnts to hosting their first website using **Apache2** on Debian. Students will learn how web servers work, how to serve a basic HTML page, how DNS and public exposure work, and most importantly, how to do it safely.
@@ -23,21 +23,54 @@ A major focus on this lab is understanding why exposing services directly from y
 - Optimal: Home network with router access for advanced testing
 
 # Target Audience
-Is this for a more beginner friendly audience or advanced audience?
+Beginner to intermediate
+
+This lab is beginner-friendly but introduces important real world concepts in networking, web hosting, and security.
 
 # Learning Objectives
-- Dashes for each subject the student is expected to learn
-- Feel free to use multiple!
+- Understand what Apache2 does as a web server
+- Install and manage Apache2 on Debian
+- Host a basic HTML website locally
+- Understand ports 80 and 443
+- Lean basic Linux web directory structure
+- Understand risks of public web hosting from a home IP
+- Learn safer alternatives like Cloudflare proxying and cloud hosting
+- Understand the basics of DNS and reverse proxy concepts
 
 ## Required Software
-Will be **VMware Workstation Pro** for most cases
-Add more if using specific software
+- VMware Workstation Pro
+- Debian 13.2
+- Web browser
+- Terminal access
+- Optional: Cloudflare account
+- Optional: AWS Free Tier account
+- Optional: Bluehost account
 
 
 
 
-## Part 1 - How are we starting this week
-Add whatever you need here. Look at week 1 docs\week02\guide.md for specific examples of what to put here
+## Part 1 - Understanding Web Hosting Basics
+Before installing anything, students should understand what they are building.
+
+A web server:
+
++ Listens for HTTP/HTTPS requests
++ Servers files like HTML, CSS, JavaScript
++ Can later support PHP, databases, and applications
+
+Common ports:
++ 80 = HTTP
++ 443 = HTTPS
+
+Important folders:
++ /var/www/html/ -> default website files
++ /etc/apache2/ -> Apache configuration files
++ /var/log/apache2/ -> Apache logs
+
+Now lets run a quick update on the Debian:
++ `sudo apt update`
++ `sudo apt upgrade`
+
 
 ## Part 2 - Next step for the process
 Add as many steps as you need. Just keep them consistent with the previous formating
