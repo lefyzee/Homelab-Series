@@ -9,8 +9,8 @@ Useful commands:
 - "**text**" bold the text
 - "*text*" italicize the text
 
-* **THIS LAB HAS NOT BEEN TESTED YET**
-* **THIS LAB NEEDS PORT 80 AND 443 AVAILABLE. IF TAILSCALE WAS SET UP BEFORE THIS LAB THEN THOSE PORTS MAY ALREADY BE IN USE**
+**THIS LAB HAS NOT BEEN TESTED YET**\
+**THIS LAB NEEDS PORT 80 AND 443 AVAILABLE. IF TAILSCALE WAS SET UP BEFORE THIS LAB THEN THOSE PORTS MAY ALREADY BE IN USE**
 
 # Self-Hosted Web Server Basics with Apache2 (Lab 4)
 This lab introduces studebnts to hosting their first website using **Apache2** on Debian. Students will learn how web servers work, how to serve a basic HTML page, how DNS and public exposure work, and most importantly, how to do it safely.
@@ -149,6 +149,35 @@ Seriously - do not do this casually.
 
 ## Part 5 - Safer Alternatives
 ### Option A - Use Cloudflare Proxy (Recommended)
+Cloudflare acts as a reverse proxy and WAF (Web Application Firewall).
+
+Benefits:
+- hides your real home IP
+- block malicious traffic
+- DDos protection
+- SSL certificates
+- traffic filtering
+- bot protection
+
+Basic idea:
+- domain points to Cloudflare
+- Cloudflare proxies traffic to your home server
+- attackers see Cloudflare, not your home IP directly
+
+This is much safer than port forwarding.
+
+Students should research:\
+www.cloudflare.com\
+On how to set up a reverse proxy
+
+More specifically:
+- DNS Proxy (orange cloud)
+- WAF
+- Zero Trust options
+- Tunnel options (even better than port forwarding)
+
+There are YouTube videos for all of these. It would be too much information to go through all of it in one week for the Homelab Series.
+
 ### Option B - Host in the Cloud
 ## Part 6 - Basic Apache Administration
 ## Part 7 - Optional Challenge - Deploy a Real Web Application
