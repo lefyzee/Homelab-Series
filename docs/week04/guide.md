@@ -10,6 +10,7 @@ Useful commands:
 - "*text*" italicize the text
 
 **THIS LAB HAS NOT BEEN TESTED YET**
+**THIS LAB NEEDS PORT 80 AND 443 AVAILABLE. IF TAILSCALE WAS SET UP BEFORE THIS LAB THEN THOSE PORTS MAY ALREADY BE IN USE**
 
 # Self-Hosted Web Server Basics with Apache2 (Lab 4)
 This lab introduces studebnts to hosting their first website using **Apache2** on Debian. Students will learn how web servers work, how to serve a basic HTML page, how DNS and public exposure work, and most importantly, how to do it safely.
@@ -71,11 +72,23 @@ Now lets run a quick update on the Debian:
 + `sudo apt update`
 + `sudo apt upgrade`
 
+## Part 2 - Installing Apache2
+`sudo apt install apache2 -y`
 
-## Part 2 - Next step for the process
-Add as many steps as you need. Just keep them consistent with the previous formating
+Check services status:
+`sudo systemctl status apache2`
 
-## Part 3 -
+Enable Apache to start automatically:
+`sudo systemctl enable apache2`
+
+Verify Apache is listening:
+`sudo ss -tulnp | grep apache`
+
+Open your browser on your main host and visit: (This will be your VMs IP address. Check it using `ip a` on the VM)
+`http://192.168.x.x`
+You should see the default Apache page.
+
+## Part 3 - Creating Your First Website
 ## Part 4 -
 ## Part 5 -
 
