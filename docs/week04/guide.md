@@ -9,8 +9,8 @@ Useful commands:
 - "**text**" bold the text
 - "*text*" italicize the text
 
-**THIS LAB HAS NOT BEEN TESTED YET**
-**THIS LAB NEEDS PORT 80 AND 443 AVAILABLE. IF TAILSCALE WAS SET UP BEFORE THIS LAB THEN THOSE PORTS MAY ALREADY BE IN USE**
+* **THIS LAB HAS NOT BEEN TESTED YET**
+* **THIS LAB NEEDS PORT 80 AND 443 AVAILABLE. IF TAILSCALE WAS SET UP BEFORE THIS LAB THEN THOSE PORTS MAY ALREADY BE IN USE**
 
 # Self-Hosted Web Server Basics with Apache2 (Lab 4)
 This lab introduces studebnts to hosting their first website using **Apache2** on Debian. Students will learn how web servers work, how to serve a basic HTML page, how DNS and public exposure work, and most importantly, how to do it safely.
@@ -86,9 +86,21 @@ Verify Apache is listening:
 
 Open your browser on your main host and visit: (This will be your VMs IP address. Check it using `ip a` on the VM)
 `http://192.168.x.x`
+
 You should see the default Apache page.
 
 ## Part 3 - Creating Your First Website
+Navigate to the web root:\
+`cd /var/www/html`
+
+Remove the default page:\
+`sudo rm index.html`
+
+Create your own:\
+`sudo nano index.html`
+
+This lab will not go into HTML, CSS, or JavaScript in detail because this is cybersecurity club, not a UI/UX design club. All the web pages we will create are basic HTML web pages. If you want to learn more about front-end web design please visit **www.theodinproject.com**
+
 ## Part 4 -
 ## Part 5 -
 
