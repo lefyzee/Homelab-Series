@@ -11,11 +11,16 @@ Useful commands:
 
 
 
-# Name of the Lab for the Week (Lab number)
-Little text here briefly explaining what this subject is.
+# Self-Hosted Web Server Basics with Apache2 (Lab 4)
+This lab introduces studebnts to hosting their first website using **Apache2** on Debian. Students will learn how web servers work, how to serve a basic HTML page, how DNS and public exposure work, and most importantly, how to do it safely.
+
+A major focus on this lab is understanding why exposing services directly from your home network can be dangerous and what safer alternatives exist. This lab will have safer methods, suchs as reverse proxies, Cloudflare protection, or cloud hosting providers like AWS.
 
 # Environment
-    What environment we are using for the week. (eg. Debian 13.2, VMware, DePaul Sec Labs)
+- Debian 13.2 VM
+- VMware Workstation Pro
+- Optional: DePaul Sec Labs Virtual Environment
+- Optimal: Home network with router access for advanced testing
 
 # Target Audience
 Is this for a more beginner friendly audience or advanced audience?
