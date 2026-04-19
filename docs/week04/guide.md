@@ -102,7 +102,7 @@ Create your own:\
 This lab will not go into HTML, CSS, or JavaScript in detail because this is cybersecurity club, not a UI/UX design club. All the web pages we will create are basic HTML web pages. If you want to learn more about front-end web design please visit **www.theodinproject.com**
 
 Example HTML:
-<!DOCTYPE html>
+```<!DOCTYPE html>
 <html>
 <head>
     <title>My First Homelab Website</title>
@@ -111,7 +111,7 @@ Example HTML:
     <h1>Hello Security Daemons!</h1>
     <p>This is my first Apache2 web server.</p>
 </body>
-</html>
+</html>```
 
 Save the file using:\
 `Ctrl + O` `Ctrl + X`
