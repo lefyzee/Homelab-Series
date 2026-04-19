@@ -111,8 +111,8 @@ Example HTML:
     <h1>Hello Security Daemons!</h1>
     <p>This is my first Apache2 web server.</p>
 </body>
-</html>```
-
+</html>
+```
 Save the file using:\
 `Ctrl + O` `Ctrl + X`
 
