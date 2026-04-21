@@ -145,7 +145,7 @@ Reattach:\
 
 Like this we are able to manage what is on our terminal so we can work on other projects.
 
-## Part 9 - Monitoring and Resource Usage\
+## Part 9 - Monitoring and Resource Usage
 Lets apply the skills we gathered from last week and lets monitor the resources of the Minecraft server.
 
 Open another terminal and run:\
@@ -171,7 +171,7 @@ Inside your **minecraft-server** directory:\
 `nano start.sh`
 
 Add this in the contents:
-     #!/bin/bash
+    #!/bin/bash
     `# Minecraft Server Startup Script`
     `# Adjust RAM allocation if needed`
 
