@@ -179,7 +179,44 @@ More specifically:
 There are YouTube videos for all of these. It would be too much information to go through all of it in one week for the Homelab Series.
 
 ### Option B - Host in the Cloud
+Instead of hosting at home use:
+- Amazon Web Services (AWS Free Tier)
+- DigitalOcean
+- Bluehost
+- Linode
+
+Benefits:
+- Isolated from home network
+- better uptime
+- professional hosting environment
+- Easier SSL and DNS management
+- Scalable later
+
+For many people cloud hosting is the smarter long term option.
+
+
 ## Part 6 - Basic Apache Administration
+Useful commands: \
+Restart Apache: \
+`sudo systemctl restart apache2`
+
+Reload config: \
+`sudo systemctl reload apache2`
+
+Stop Apache: \
+`sudo systemctl stop apache2`
+
+View logs: \
+`sudo tail -f /var/log/apache2/access.log` \
+`sudo tail -f /var/log/apache2/error.log` \
+
+Check firewalls: \
+`sudo ufw status`
+
+Allow HTTP locally if needed: \
+`sudo ufw allow 80/tcp`
+
+
 ## Part 7 - Optional Challenge - Deploy a Real Web Application
 Optional only.
 
@@ -200,11 +237,12 @@ Students who finish early can research:
 This is much closer to what you will see in the real world. Most site are not just Apache2 basic html websites but there is a whole rabbit hole you can go down in web that could be its own series on its own! If you are interested on web dev please do research outside of this GitHub repo as we barely scratched the surface of web.
 
 
-
-### Lab number Completion Checklist
-* What is the student expected to accomplish for this lab?
-* (eg. created debian VM)
-* (eg. created NAS)
-
-
-**At the end feel free to add any extra notes for next week**
+### Lab 4 Completion Checklist
+* Installed Apache2 successfully
+* Verified Apache service is running
+* Accessed the default Apache page
+* Created and hosted a custom HTML webpage
+* Understood why direct home hosting is risky
+* Learned safer hosting alternatives
+* Researched Cloudflare proxy/WAF options
+* Understood basic Apache management commands
