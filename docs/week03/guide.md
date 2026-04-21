@@ -171,9 +171,10 @@ Inside your **minecraft-server** directory:\
 `nano start.sh`
 
 Add this in the contents:
-```#!/bin/bash
+```
+#!/bin/bash
 # Minecraft Server Startup Script
-    # Adjust RAM allocation if needed
+# Adjust RAM allocation if needed
 
 RAM_MIN="1G"
 RAM_MAX="2G"
