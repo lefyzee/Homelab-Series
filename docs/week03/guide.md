@@ -31,31 +31,31 @@ Beginner friendly but introduces real service hosting concepts. Assumes students
 
 
 ## Part 1 - Preparing the Debian Server
-It has been a week since we last updated the server so lets go ahead and update it
+It has been a week since we last updated the server so lets go ahead and update it\
 `sudo apt update && sudo apt upgrade -y`
 
-Install Required Java Runtime:
-For newer versions of Minecraft we need Java 21 or newer
+Install Required Java Runtime:\
+For newer versions of Minecraft we need Java 21 or newer\
 `sudo apt install openjdk-21-jre -y`
 
-Now make sure that it is installed:
-`java -version`
+Now make sure that it is installed:\
+`java -version`\
 You should see OpenJDK 21 listed.
 
 ## Part 2 - Creating the Minecraft Server Directory
-Create a dedicated directory:
-`mkdir ~/minecraft-server`
-`cd ~/minecraft-server`
+Create a dedicated directory:\
+`mkdir ~/minecraft-server`\
+`cd ~/minecraft-server`\
 
 Download the latest Minecraft server .jar file from:
 
 *https://www.minecraft.net/en-us/download/server*
 
-Use wget to download it directly (replace the URL with the current version):
+Use wget to download it directly (replace the URL with the current version):\
 `wget https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar`
 
 ## Part 3 - First Launch and EULA Acceptance
-Run the server for the first time:
+Run the server for the first time:\
 `java -Xmx2G -Xms1G -jar server.jar nogui`
 
 Explaination of what you just ran
@@ -74,17 +74,17 @@ Explaination of what you just ran
 
 save and exit (Ctrt + 0, Ctrl + X)
 
-Lets make sure the server runs this time
-Run the server again:
+Lets make sure the server runs this time\
+Run the server again:\
 `java -Xmx2G -Xms1G -jar server.jar nogui`
 
 ## Part 4 - Configure the Server
 We should now no longer have the cli to run commands. We need to run commands directly on the server application.
 
-Stop the server with
+Stop the server with\
 `stop`
 
-Edit the configuration
+Edit the configuration\
 `nano server.properties`
 
     Key setting to modify
@@ -93,27 +93,27 @@ Edit the configuration
         `max-player=10`
         `online-mode=false`
 
-For now, we set online-mode=false to simplify local testing
+For now, we set online-mode=false to simplify local testing\
 Save and restart the server
 
 ## Part 5 - Firewall Configuration (UWF Configuration)
-Check firewall status
-`sudo ufw status`
-    If it is not installed or active follow these steps
-        `sudo apt install ufw`
+Check firewall status\
+`sudo ufw status`\
+    If it is not installed or active follow these steps\
+        `sudo apt install ufw`\
         `sudo ufw enable`
 
-If the firewall is active, allow Minecraft's default port:
+If the firewall is active, allow Minecraft's default port:\
 `sudo ufw allow 25565/tcp`
 
-Make sure the rule works
+Make sure the rule works\
 `sudo ufw status`
 
 ## Part 6 - Finding the IP addess of the VM
-We did this last week but just as a reminder run
+We did this last week but just as a reminder run\
 `ip a`
 
-You will find an IP address on interface ens33 like:
+You will find an IP address on interface ens33 like:\
 *192.168.196.134*
 
 Remember this IP address as we will use it to connect to the server.
@@ -130,28 +130,28 @@ Note: *If you are not able to connect then switch from NAT mode to Bridged Mode 
 ## Part 8 - Running the Server in the Background (Advanced)
 Instead of keeping the terminal always open, we can use *screen* to make the Minecraft server run in the background.
 
-Install screen
+Install screen\
 `sudo apt install screen`
 
-Start a screen session:
-`screen -S mcserver`
+Start a screen session:\
+`screen -S mcserver`\
 Now run the server inside it.
 
-Detach the server with:
+Detach the server with:\
 `Ctrl + A, then D`
 
-Reattach:
+Reattach:\
 `screen -r mcserver`
 
 Like this we are able to manage what is on our terminal so we can work on other projects.
 
-## Part 9 - Monitoring and Resource Usage
+## Part 9 - Monitoring and Resource Usage\
 Lets apply the skills we gathered from last week and lets monitor the resources of the Minecraft server.
 
-Open another terminal and run:
+Open another terminal and run:\
 `htop` or `btop`
 
-If it is not installed then run
+If it is not installed then run\
 `sudo apt install htop`
 
 Observe
@@ -167,36 +167,36 @@ Some questions to think over
 Instead of typing the full Java command every time, we will create an executable startup script.
 This makes starting the server cleaner and easier to run.
 
-Inside your **minecraft-server** directory:
+Inside your **minecraft-server** directory:\
 `nano start.sh`
 
 Add this in the contents:
-   #!/bin/bash
-   `# Minecraft Server Startup Script`
-   `# Adjust RAM allocation if needed`
+     #!/bin/bash
+    `# Minecraft Server Startup Script`
+    `# Adjust RAM allocation if needed`
 
-   RAM_MIN="1G"
-   RAM_MAX="2G"
-   JAR_FILE="server.jar"
+    RAM_MIN="1G"
+    RAM_MAX="2G"
+    JAR_FILE="server.jar"
 
-   echo "Starting Minecraft Server..."
-   echo "Minimum RAM: $RAM_MIN"
-   echo "Maximum RAM: $RAM_MAX"
+    echo "Starting Minecraft Server..."
+    echo "Minimum RAM: $RAM_MIN"
+    echo "Maximum RAM: $RAM_MAX"
 
-   java -Xms$RAM_MIN -Xmx$RAM_MAX -jar $JAR_FILE nogui
+    java -Xms$RAM_MIN -Xmx$RAM_MAX -jar $JAR_FILE nogui
 
-save and exit
+save and exit\
 `Ctrl + O`
 `Ctrl + X`
 
 ### Make the Script Executable
-Right now we just created a text file. We need to make it executable.
+Right now we just created a text file. We need to make it executable.\
 `chmod +x start.sh`
 
-Verify permissions:
+Verify permissions:\
 `ls -l`
 
-You should see
+You should see\
 -rwxr-xr-x start.sh
 
 *Note: the `x` means it is executable*
@@ -211,13 +211,13 @@ If you are running VMware on a Windows 11 computer then you will need to port fo
 
 Make sure your VM is NATed in VMware.
 
-Now check the "public" IP address on your host machine by running
+Now check the "public" IP address on your host machine by running\
 `ipconfig` on Windows
 
 This is the IP address your friends will use to connect to your Minecraft server running on your Debian VM.
 
 ### Open up the Port on Windows Firewall
-On Windows 11 type in
+On Windows 11 type in\
 "Windows Defender Firewall with Advanced Security"
 
 Add an inbound rule to allow connections (These will be written using the `commands` font but you will not need to write these commands into a terminal.)
@@ -232,7 +232,7 @@ Click on:
 8. Click finish
 
 ### Have your Friends Connect to your Minecraft Server
-Now that the port is open on your host computer, give your host PC IP address to your friends and start the Minecraft server.
+Now that the port is open on your host computer, give your host PC IP address to your friends and start the Minecraft server.\
 *75.102.196.137*
 
 From there launch Minecraft Java edition
