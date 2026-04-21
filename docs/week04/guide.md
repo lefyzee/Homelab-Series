@@ -1,14 +1,3 @@
-This is the general template for the labs
-
-Useful commands:
-- "-" "+" "*" creates bullet points
-- "`code`" creates code
-- "#" creates heading 1
-- "##" creates heading 2
-- "###" creates heading 3
-- "**text**" bold the text
-- "*text*" italicize the text
-
 **THIS LAB HAS NOT BEEN TESTED YET**\
 **THIS LAB NEEDS PORT 80 AND 443 AVAILABLE. IF TAILSCALE WAS SET UP BEFORE THIS LAB THEN THOSE PORTS MAY ALREADY BE IN USE**
 
@@ -75,16 +64,16 @@ Now lets run a quick update on the Debian:
 ## Part 2 - Installing Apache2
 `sudo apt install apache2 -y`
 
-Check services status:
+Check services status:\
 `sudo systemctl status apache2`
 
-Enable Apache to start automatically:
+Enable Apache to start automatically:\
 `sudo systemctl enable apache2`
 
-Verify Apache is listening:
+Verify Apache is listening:\
 `sudo ss -tulnp | grep apache`
 
-Open your browser on your main host and visit: (This will be your VMs IP address. Check it using `ip a` on the VM)
+Open your browser on your main host and visit: (This will be your VMs IP address. Check it using `ip a` on the VM)\
 `http://192.168.x.x`
 
 You should see the default Apache page.
@@ -208,7 +197,7 @@ Stop Apache: \
 
 View logs: \
 `sudo tail -f /var/log/apache2/access.log` \
-`sudo tail -f /var/log/apache2/error.log` \
+`sudo tail -f /var/log/apache2/error.log`
 
 Check firewalls: \
 `sudo ufw status`
