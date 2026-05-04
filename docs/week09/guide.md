@@ -11,35 +11,66 @@ Useful commands:
 
 
 
-# Name of the Lab for the Week (Lab number)
-Little text here briefly explaining what this subject is.
+# Wazuh SIEM Deployment and Windows Agent Integration (Lab 9)
+In this lab, you will deploy a centralized Wazuh SIEM on a Debian virtual machine and configure your Windows 11 host as an agent. You will validate connectivity and test real security detections such as failed logins and PowerShell activity.
 
 # Environment
-    What environment we are using for the week. (eg. Debian 13.2, VMware, DePaul Sec Labs)
+- Debian 13 (Wazuh Server)
+- Windows 11 (Host Machine as Agent)
+- VMware Workstation Pro (VMnet8 NAT recommended)
 
 # Target Audience
-Is this for a more beginner friendly audience or advanced audience?
+Intermediate (Students should be comfortable using Linux terminal and basic Windows administration)
 
 # Learning Objectives
-- Dashes for each subject the student is expected to learn
-- Feel free to use multiple!
+- Deploy a Wazuh all-in-one SIEM server
+- Install and configure a Windows endpoint agent
+- Troubleshoot connectivity and configuration issues
+- Validate log ingestion from Windows to Wazuh
+- Perform basic detection testing (auth logs, PowerShell, etc.)
 
 ## Required Software
-Will be **VMware Workstation Pro** for most cases
-Add more if using specific software
+- VMware Workstation Pro
+- Debian ISO
+- Windows 11 host
+- Web browser
 
 
 
 
-## Part 1 - How are we starting this week
-Add whatever you need here. Look at week 1 docs\week02\guide.md for specific examples of what to put here
+## Part 1 - Setting up the Debian Wazuh Server
+Step 1: Create the VM
+- OS: Debian (64-bit)
+- RAM: 4 GB minimum (8 GB recommended)
+- CPU: 4 cores
+- Disk: 40 GB
+- Network: NAT (VMnet8)
 
-## Part 2 - Next step for the process
-Add as many steps as you need. Just keep them consistent with the previous formating
+## Part 2 - Always Update the Debian Server
+`sudo apt update && sudo apt upgrade -y`
 
-## Part 3 -
-## Part 4 -
-## Part 5 -
+## Part 3 - Installing Wazuh
+Be sure to change the "/4.x/" to the current version of Wazuh. As of making this homelab it is 4.14\
+rm -f wazuh-install.sh\
+curl -sSL -O https://packages.wazuh.com/4.x/wazuh-install.sh\
+
+## Part 4 - Verify Script
+`head wazuh-install.sh`\
+We are looking for the start of it to say #!/bin/bash
+
+## Part 5 - Install Wazuh
+`sudo bash wazuh-install.sh -a`
+
+## Part 6 - Get VM IP
+`ip a`
+
+## Part 7 - Access Web GUI from Windows Host
+http://192.168.196.143 \
+Login with the save creds in the Wazuh install on your Debian machine.
+
+## Part 8 Install Wazuh Agent on Wazuh
+Run PowerShell as Administrator:
+    `Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.5-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='192.168.192.43' WAZUH_AGENT_NAME='deb.1'`
 
 ### Lab number Completion Checklist
 * What is the student expected to accomplish for this lab?
