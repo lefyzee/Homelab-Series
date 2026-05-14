@@ -51,8 +51,8 @@ Step 1: Create the VM
 
 ## Part 3 - Installing Wazuh
 Be sure to change the "/4.x/" to the current version of Wazuh. As of making this homelab it is 4.14\
-rm -f wazuh-install.sh\
-curl -sSL -O https://packages.wazuh.com/4.x/wazuh-install.sh\
+`rm -f wazuh-install.sh`\
+`curl -sSL -O https://packages.wazuh.com/4.x/wazuh-install.sh`
 
 ## Part 4 - Verify Script
 `head wazuh-install.sh`\
